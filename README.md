@@ -2,7 +2,7 @@
 
 # Project Name
 
-- Portfolio: validate contact form
+- Portfolio: preserve data in the browser
 
 ## Built With
 
@@ -19,7 +19,7 @@
 
 **This is an example of how you may give instructions on setting up your project locally.**
 
-This is about how to store data in localstorage browser if the user close the window or browser itself.
+This is about how to preserve the input data from the user in localstorage and how to display it if he close the window or browser.
 
 # Project link live version
 https://armandocomellas1.github.io/Desktop-version/
