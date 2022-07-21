@@ -296,8 +296,9 @@ function localStorageFct(parameter) {
       let getFullNameTxt = document.getElementById('full_name').value;
       let getEmailTxt = document.getElementById('email_address').value;
       let getTextArea = document.getElementById('text_area').value;
-      let arrayResult = [getFullNameTxt, getEmailTxt, getTextArea]
-      localStorage.setItem('form', arrayResult);
+      let objectInputs = {Name: getFullNameTxt, Email: getEmailTxt, TextArea: getTextArea};
+      let strinfObject = JSON.stringify(objectInputs);
+      localStorage.setItem('form', strinfObject);
     }
   }
 }
@@ -306,11 +307,10 @@ localStorageFct("No");
 
 window.onload = function() {
   if (localStorage.getItem('form')) {
-    let splitString = localStorage.getItem('form').split(',');
-    console.log(splitString);
-    document.getElementById('full_name').value = splitString[0];
-    document.getElementById('email_address').value = splitString[1];
-    document.getElementById('text_area').value = splitString[2];
+    let parseObjt = JSON.parse(localStorage.getItem('form'));
+    document.getElementById('full_name').value = parseObjt.Name;
+    document.getElementById('email_address').value = parseObjt.Email;
+    document.getElementById('text_area').value = parseObjt.TextArea;
   } else {
     console.log("No data");//localStorage.clear();
   }
