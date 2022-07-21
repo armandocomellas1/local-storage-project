@@ -312,6 +312,6 @@ window.onload = function() {
     document.getElementById('email_address').value = parseObjt.Email;
     document.getElementById('text_area').value = parseObjt.TextArea;
   } else {
-    console.log("No data");//localStorage.clear();
+    localStorage.clear();
   }
 };
